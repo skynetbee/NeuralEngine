@@ -23,4 +23,4 @@ Add the package to your project using Xcode:
 Or add it manually to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/your-org/NeuralEngine.git", from: "1.0.0")
+.package(url: "https://github.com/skynetbee/NeuralEngine.git", from: "1.0.0")
