@@ -20,11 +20,9 @@ Add the package to your project using Xcode:
 3. Enter the URL to your repository.
 4. Choose the `NeuralEngine` library and click **Add Package**.
 
-Or add it manually to your `Package.swift`:
+## Usage
 
 ```swift
-.package(url: "https://github.com/skynetbee/NeuralEngine.git", from: "1.0.0")```
-
 import SwiftUI
 import NeuralEngine
 
