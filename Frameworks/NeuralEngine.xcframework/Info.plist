@@ -6,21 +6,6 @@
 	<array>
 		<dict>
 			<key>BinaryPath</key>
-			<string>NeuralEngine.framework/Versions/A/NeuralEngine</string>
-			<key>LibraryIdentifier</key>
-			<string>macos-arm64_x86_64</string>
-			<key>LibraryPath</key>
-			<string>NeuralEngine.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>macos</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
 			<string>NeuralEngine.framework/NeuralEngine</string>
 			<key>LibraryIdentifier</key>
 			<string>ios-arm64_x86_64-simulator</string>
