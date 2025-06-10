@@ -24,3 +24,41 @@ Or add it manually to your `Package.swift`:
 
 ```swift
 .package(url: "https://github.com/skynetbee/NeuralEngine.git", from: "1.0.0")
+
+```swift
+import SwiftUI
+import NeuralEngine
+
+// 🌟 Root container showing off every mini-project
+struct ContentView: View {
+    var body: some View {
+        DevEnvironment(
+            p1: Project1View(),
+            p2: Project2View(),
+            p3: Project3View(),
+            p4: Project4View(),
+            p5: Project5View(),
+            p6: Project6View(),
+            p7: Project7View(),
+            p8: Project8View(),
+            p9: Project9View(),
+            p10: Project10View(),
+            workaround: WorkaroundView()
+        )
+    }
+}
+
+// 🔽 10 quick demo screens
+struct Project1View: View  { var body: some View { Text("Hello from Project 1") } }
+struct Project2View: View  { var body: some View { Text("Hello from Project 2") } }
+struct Project3View: View  { var body: some View { Text("Hello from Project 3") } }
+struct Project4View: View  { var body: some View { Text("Hello from Project 4") } }
+struct Project5View: View  { var body: some View { Text("Hello from Project 5") } }
+struct Project6View: View  { var body: some View { Text("Hello from Project 6") } }
+struct Project7View: View  { var body: some View { Text("Hello from Project 7") } }
+struct Project8View: View  { var body: some View { Text("Hello from Project 8") } }
+struct Project9View: View  { var body: some View { Text("Hello from Project 9") } }
+struct Project10View: View { var body: some View { Text("Hello from Project 10") } }
+
+// 🛠️ Extra workaround screen
+struct WorkaroundView: View { var body: some View { Text("Hello from Workaround") } }
