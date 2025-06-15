@@ -1,0 +1,6 @@
+*.xcarchive
+*.xcworkspace
+*.xcodeproj
+build/
+DerivedData/
+dist/
