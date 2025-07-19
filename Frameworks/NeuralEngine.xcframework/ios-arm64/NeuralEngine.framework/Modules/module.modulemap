@@ -1,0 +1,11 @@
+framework module NeuralEngine {
+  umbrella header "NeuralEngine.h"
+  export *
+
+  module * { export * }
+}
+
+module NeuralEngine.Swift {
+  header "NeuralEngine-Swift.h"
+  requires objc
+}
