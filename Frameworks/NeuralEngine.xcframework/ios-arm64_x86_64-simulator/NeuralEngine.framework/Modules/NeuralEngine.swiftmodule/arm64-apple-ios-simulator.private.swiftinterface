@@ -401,6 +401,17 @@ public struct RIBTSingleField : SwiftUI.View {
   public func validateInput(_ text: Swift.String)
   public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine15RIBTSingleFieldV4bodyQrvp", 0) __
 }
+public struct ImageMetadata : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ImageUploader : SwiftUI.View {
+  public init()
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13ImageUploaderV4bodyQrvp", 0) __
+}
 public struct FillFromDatabase : SwiftUI.View {
   public init(BindVar: SwiftUI.Binding<Swift.String>, Query: Swift.String, ErrorApnd: Swift.String, SelectBoxName: Swift.String, FirstDeafultValue: Swift.String = "")
   public func ProjectDropdown(query: Swift.String) -> [Swift.String]
