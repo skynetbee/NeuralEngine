@@ -1,703 +1,36 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
-// swift-module-flags: -target arm64-apple-ios17.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NeuralEngine
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios17.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name NeuralEngine
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
-import AVKit
 import DeveloperToolsSupport
 import Foundation
 import Network
 @_exported import NeuralEngine
 import PDFKit
-import PhotosUI
 import Speech
 import Swift
 import SwiftUI
-import SwiftUICore
 import UIKit
 import _AVKit_SwiftUI
 import _Concurrency
 import _PhotosUI_SwiftUI
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_Concurrency.MainActor @preconcurrency public struct AudioUploderView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(audioFiles: [Swift.String])
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func revealNextAudioCard()
-  @_Concurrency.MainActor @preconcurrency public func togglePlayPause(at index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func playAudio(at index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func seekToProgress(_ progress: CoreFoundation.CGFloat, for index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func startTimer(for index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func updateCurrentTime(for index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func getTotalAudioDuration(url: Foundation.URL) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func toggleDeleteButton(for index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func deleteAudio(at index: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func resetAudioCard(for index: Swift.Int)
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16AudioUploderViewV4bodyQrvp", 0) __
-}
-public func extractWaveform(from url: Foundation.URL) -> [CoreFoundation.CGFloat]
-public func WaveformView(samples: [CoreFoundation.CGFloat], playProgress: SwiftUICore.Binding<CoreFoundation.CGFloat>, onSeek: @escaping (CoreFoundation.CGFloat) -> Swift.Void) -> some SwiftUICore.View
-
-public func downsample(_ samples: [CoreFoundation.CGFloat], to targetCount: Swift.Int) -> [CoreFoundation.CGFloat]
-extension Swift.Comparable {
-  public func clamped(to limits: Swift.ClosedRange<Self>) -> Self
-}
-extension CoreFoundation.CGFloat {
-  public func clamped(to limits: Swift.ClosedRange<CoreFoundation.CGFloat>) -> CoreFoundation.CGFloat
-}
-extension Swift.Array {
-  public func chunked(into size: Swift.Int) -> [[Element]]
-}
-extension SwiftUICore.Color {
-  public static let goldGradient: SwiftUICore.LinearGradient
-}
-public func BigTranslucentCard<Content>(@SwiftUICore.ViewBuilder content: @escaping () -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View
-
-public func SmallTranslucentCard<Content>(@SwiftUICore.ViewBuilder content: @escaping () -> Content) -> some SwiftUICore.View where Content : SwiftUICore.View
-
-@objc @_inheritsConvenienceInitializers public class AudioPlayerDelegate : ObjectiveC.NSObject, AVFAudio.AVAudioPlayerDelegate {
-  @objc public func audioPlayerDidFinishPlaying(_ player: AVFAudio.AVAudioPlayer, successfully flag: Swift.Bool)
-  @objc override dynamic public init()
-  @objc deinit
-}
-public protocol PaginationDelegate : SwiftUICore.View {
-  var pnSearch: Swift.String { get set }
-}
-@_Concurrency.MainActor @preconcurrency public struct Pagination<T> : SwiftUICore.View where T : NeuralEngine.PaginationDelegate {
-  @_Concurrency.MainActor @preconcurrency public var PageSize: Swift.Int
-  @_Concurrency.MainActor @preconcurrency public var id: Swift.String
-  @_Concurrency.MainActor @preconcurrency public var paginationData: [T]
-  @_Concurrency.MainActor @preconcurrency public var maxPageNumbersToShow: Swift.Int
-  @_Concurrency.MainActor @preconcurrency public let debounceInterval: Swift.Double
-  @_Concurrency.MainActor @preconcurrency public init(PageSize: Swift.Int, id: Swift.String, paginationData: [T], maxPageNumbersToShow: Swift.Int = 3)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func emptyData()
-  @_Concurrency.MainActor @preconcurrency public var currentItems: [T] {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func loadPage(page: Swift.Int)
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10PaginationV4bodyQrvp", 0) __<T>
-}
-@_Concurrency.MainActor @preconcurrency public struct PaginationView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(currentPage: SwiftUICore.Binding<Swift.Int>, totalPages: Swift.Int, onPageChange: @escaping (Swift.Int) -> Swift.Void, maxPageNumbersToShow: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func pageNumbersToDisplay(maxPageNumbersToShow: Swift.Int) -> [Swift.Int]
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14PaginationViewV4bodyQrvp", 0) __
-}
-public func enqry(_ query: Swift.String) -> Swift.String
-public func twoLineGraph(_ title: Swift.String, _ shareNames: [Swift.String], _ percentages1: [CoreFoundation.CGFloat], _ percentages2: [CoreFoundation.CGFloat], _ label1: Swift.String, _ label2: Swift.String, _ size: CoreFoundation.CGFloat = 600) -> some SwiftUICore.View
-
-@_Concurrency.MainActor @preconcurrency public struct CheckmarkAnimationView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func customGradient() -> SwiftUICore.LinearGradient
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine22CheckmarkAnimationViewV4bodyQrvp", 0) __
-}
-public struct CheckmarkShape : SwiftUICore.Shape {
-  nonisolated public func path(in rect: CoreFoundation.CGRect) -> SwiftUICore.Path
-  public typealias AnimatableData = SwiftUICore.EmptyAnimatableData
-  public typealias Body = SwiftUICore._ShapeView<NeuralEngine.CheckmarkShape, SwiftUICore.ForegroundStyle>
-}
-@_Concurrency.MainActor @preconcurrency public struct ParticleView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func generateParticles()
-  @_Concurrency.MainActor @preconcurrency public func customGradient() -> SwiftUICore.LinearGradient
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12ParticleViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct MultiLineGraph : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String, shareNames: [Swift.String], percentageSets: [[CoreFoundation.CGFloat]], labels: [Swift.String], size: CoreFoundation.CGFloat = 350)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14MultiLineGraphV4bodyQrvp", 0) __
-}
-extension SwiftUICore.Color {
-  public init(hex: Swift.String)
-}
-@_Concurrency.MainActor @preconcurrency public struct SmartBlackButton : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(label: Swift.String, action: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var outerBorder: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16SmartBlackButtonV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct SmartGreenButton : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(label: Swift.String, action: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var outerBorder: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var innerContent: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var shimmerOverlay: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var shimmerGradient: SwiftUICore.LinearGradient {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func startShineAnimations()
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16SmartGreenButtonV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct SmartRedButton : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(label: Swift.String, action: @escaping () -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var outerBorder: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var innerContent: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var shimmerOverlay: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var shimmerGradient: SwiftUICore.LinearGradient {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func startShineAnimations()
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14SmartRedButtonV4bodyQrvp", 0) __
-}
-public func displayList(headline: Swift.String, items: [Swift.String]) -> some SwiftUICore.View
-
-extension SwiftUICore.Color {
-  public static let lightSalmonRed: SwiftUICore.Color
-  public static let salmonRed: SwiftUICore.Color
-  public static let lightCoralRed: SwiftUICore.Color
-  public static let pinkRed: SwiftUICore.Color
-  public static let hotPinkRed: SwiftUICore.Color
-  public static let brightRed: SwiftUICore.Color
-  public static let mediumRed: SwiftUICore.Color
-  public static let darkRed: SwiftUICore.Color
-  public static let maroonRed: SwiftUICore.Color
-  public static let burgundyRed: SwiftUICore.Color
-  public static let chestnutRed: SwiftUICore.Color
-  public static let crimsonRed: SwiftUICore.Color
-  public static let firebrickRed: SwiftUICore.Color
-  public static let indianRed: SwiftUICore.Color
-  public static let lightPinkRed: SwiftUICore.Color
-  public static let darkSalmonRed: SwiftUICore.Color
-  public static let bloodRed: SwiftUICore.Color
-  public static let oxbloodRed: SwiftUICore.Color
-  public static let mintGreen: SwiftUICore.Color
-  public static let honeydewGreen: SwiftUICore.Color
-  public static let lightGreen: SwiftUICore.Color
-  public static let paleGreen: SwiftUICore.Color
-  public static let limeGreen: SwiftUICore.Color
-  public static let mediumSpringGreen: SwiftUICore.Color
-  public static let springGreen: SwiftUICore.Color
-  public static let forestGreen: SwiftUICore.Color
-  public static let seaGreen: SwiftUICore.Color
-  public static let darkGreen: SwiftUICore.Color
-  public static let oliveDrabGreen: SwiftUICore.Color
-  public static let tealGreen: SwiftUICore.Color
-  public static let darkCyanGreen: SwiftUICore.Color
-  public static let lightSeaGreen: SwiftUICore.Color
-  public static let mediumSeaGreen: SwiftUICore.Color
-  public static let darkOliveGreen: SwiftUICore.Color
-  public static let darkSlateGrayGreen: SwiftUICore.Color
-  public static let darkForestGreen: SwiftUICore.Color
-  public static let skyBlue: SwiftUICore.Color
-  public static let powderBlue: SwiftUICore.Color
-  public static let lightBlue: SwiftUICore.Color
-  public static let aliceBlue: SwiftUICore.Color
-  public static let dodgerBlue: SwiftUICore.Color
-  public static let cornflowerBlue: SwiftUICore.Color
-  public static let steelBlue: SwiftUICore.Color
-  public static let darkBlue: SwiftUICore.Color
-  public static let navy: SwiftUICore.Color
-  public static let midnightBlue: SwiftUICore.Color
-  public static let prussianBlue: SwiftUICore.Color
-  public static let tealBlue: SwiftUICore.Color
-  public static let ceruleanBlue: SwiftUICore.Color
-  public static let sapphireBlue: SwiftUICore.Color
-  public static let azureBlue: SwiftUICore.Color
-  public static let indigoBlue: SwiftUICore.Color
-  public static let darkSlateBlue: SwiftUICore.Color
-  public static let deepSkyBlue: SwiftUICore.Color
-  public static let lightYellow: SwiftUICore.Color
-  public static let lemonChiffonYellow: SwiftUICore.Color
-  public static let paleYellow: SwiftUICore.Color
-  public static let mellowYellow: SwiftUICore.Color
-  public static let schoolBusYellow: SwiftUICore.Color
-  public static let goldYellow: SwiftUICore.Color
-  public static let canaryYellow: SwiftUICore.Color
-  public static let goldenrodYellow: SwiftUICore.Color
-  public static let darkGoldenrodYellow: SwiftUICore.Color
-  public static let mustardYellow: SwiftUICore.Color
-  public static let cyberYellow: SwiftUICore.Color
-  public static let saffronYellow: SwiftUICore.Color
-  public static let honeyYellow: SwiftUICore.Color
-  public static let tungstenYellow: SwiftUICore.Color
-  public static let jasmineYellow: SwiftUICore.Color
-  public static let amberYellow: SwiftUICore.Color
-  public static let bronzeYellow: SwiftUICore.Color
-  public static let citrineYellow: SwiftUICore.Color
-  public static let charcoalGrayBlack: SwiftUICore.Color
-  public static let onyxGrayBlack: SwiftUICore.Color
-  public static let outerSpaceBlack: SwiftUICore.Color
-  public static let jetGrayBlack: SwiftUICore.Color
-  public static let vulcanBlack: SwiftUICore.Color
-  public static let eerieBlack: SwiftUICore.Color
-  public static let almostBlack: SwiftUICore.Color
-  public static let pitchBlack: SwiftUICore.Color
-  public static let pureBlack: SwiftUICore.Color
-  public static let lavenderPurples: SwiftUICore.Color
-  public static let thistlePurples: SwiftUICore.Color
-  public static let plumLightPurples: SwiftUICore.Color
-  public static let orchidLightPurples: SwiftUICore.Color
-  public static let orchidPurples: SwiftUICore.Color
-  public static let violetPurples: SwiftUICore.Color
-  public static let amethystPurples: SwiftUICore.Color
-  public static let purpleDark: SwiftUICore.Color
-  public static let indigoPurples: SwiftUICore.Color
-  public static let eggplantPurples: SwiftUICore.Color
-  public static let grapePurples: SwiftUICore.Color
-  public static let lilacPurples: SwiftUICore.Color
-  public static let mauvePurples: SwiftUICore.Color
-  public static let byzantiumPurples: SwiftUICore.Color
-  public static let fuchsiaPurples: SwiftUICore.Color
-  public static let darkMagentaPurples: SwiftUICore.Color
-  public static let deepPurple: SwiftUICore.Color
-  public static let midnightPurple: SwiftUICore.Color
-  public static let pureWhite: SwiftUICore.Color
-  public static let creamWhite: SwiftUICore.Color
-  public static let ivoryWhite: SwiftUICore.Color
-  public static let oldLaceWhite: SwiftUICore.Color
-  public static let seashellWhite: SwiftUICore.Color
-  public static let snowWhite: SwiftUICore.Color
-  public static let linenWhite: SwiftUICore.Color
-  public static let lavenderBlushWhite: SwiftUICore.Color
-  public static let ghostWhite: SwiftUICore.Color
-  public static let antiqueWhite: SwiftUICore.Color
-  public static let floralWhite: SwiftUICore.Color
-  public static let gainsboroWhite: SwiftUICore.Color
-  public static let honeydewWhite: SwiftUICore.Color
-  public static let whisperWhite: SwiftUICore.Color
-  public static let smokeWhite: SwiftUICore.Color
-  public static let quartzWhite: SwiftUICore.Color
-  public static let peachOrange: SwiftUICore.Color
-  public static let apricotOrange: SwiftUICore.Color
-  public static let melonOrange: SwiftUICore.Color
-  public static let coralOrange: SwiftUICore.Color
-  public static let sunsetOrange: SwiftUICore.Color
-  public static let tangerineOrange: SwiftUICore.Color
-  public static let neonCarrotOrange: SwiftUICore.Color
-  public static let burntOrange: SwiftUICore.Color
-  public static let rustOrange: SwiftUICore.Color
-  public static let bronzeOrange: SwiftUICore.Color
-  public static let copperOrange: SwiftUICore.Color
-  public static let pumpkinOrange: SwiftUICore.Color
-  public static let carrotOrange: SwiftUICore.Color
-  public static let amberOrange: SwiftUICore.Color
-  public static let apricotCreamOrange: SwiftUICore.Color
-  public static let chocolateOrange: SwiftUICore.Color
-  public static let siennaOrange: SwiftUICore.Color
-  public static let mahoganyOrange: SwiftUICore.Color
-  public static let beigeBrown: SwiftUICore.Color
-  public static let wheatBrown: SwiftUICore.Color
-  public static let tanBrown: SwiftUICore.Color
-  public static let khakiBrown: SwiftUICore.Color
-  public static let sandyBrown: SwiftUICore.Color
-  public static let goldenrodBrown: SwiftUICore.Color
-  public static let peruBrown: SwiftUICore.Color
-  public static let burlywoodBrown: SwiftUICore.Color
-  public static let siennaBrown: SwiftUICore.Color
-  public static let saddleBrown: SwiftUICore.Color
-  public static let chocolateBrown: SwiftUICore.Color
-  public static let cinnamonBrown: SwiftUICore.Color
-  public static let maroonBrown: SwiftUICore.Color
-  public static let umberBrown: SwiftUICore.Color
-  public static let walnutBrown: SwiftUICore.Color
-  public static let espressoBrown: SwiftUICore.Color
-  public static let darkChocolateBrown: SwiftUICore.Color
-  public static let darkBrownBrown: SwiftUICore.Color
-  public static let deepBrown: SwiftUICore.Color
-  public static let gainsboroGray: SwiftUICore.Color
-  public static let lightGray: SwiftUICore.Color
-  public static let silverGray: SwiftUICore.Color
-  public static let platinumGray: SwiftUICore.Color
-  public static let spanishGray: SwiftUICore.Color
-  public static let coolGray: SwiftUICore.Color
-  public static let slateGray: SwiftUICore.Color
-  public static let dimGray: SwiftUICore.Color
-  public static let charcoalGray: SwiftUICore.Color
-  public static let outerSpaceGray: SwiftUICore.Color
-  public static let onyxGray: SwiftUICore.Color
-  public static let jetGray: SwiftUICore.Color
-  public static let ebonyGray: SwiftUICore.Color
-  public static let davysGrey: SwiftUICore.Color
-  public static let taupeGray: SwiftUICore.Color
-}
-public class DatabaseConnectionEstablisher {
-  public var db: Swift.OpaquePointer?
-  public var path: Swift.String
-  public init()
-  @objc deinit
-  public func restart()
-  public func executeQuery(_ query: Swift.String) -> (Swift.Bool, [[Swift.String : Swift.String]]?)
-}
-@_hasMissingDesignatedInitializers public class DevOpsConnectionEstablisher {
-  @objc deinit
-  public func restart()
-  public func executeQuery(_ query: Swift.String) -> (Swift.Bool, [[Swift.String : Swift.String]]?)
-  public func select(_ qry: Swift.String, file: Swift.String = #file, line: Swift.Int = #line, ErrorHandling: Swift.Bool = true) -> [Swift.String : Swift.String]?
-}
-public var DevOps: NeuralEngine.DevOpsConnectionEstablisher
-@_hasMissingDesignatedInitializers public class DeviceFingerprintConnectionEstablisher {
-  @objc deinit
-  public func restart()
-  public func executeQuery(_ query: Swift.String) -> (Swift.Bool, [[Swift.String : Swift.String]]?)
-  public func reset(line: Swift.Int = #line, file: Swift.String = #file) -> Swift.Bool
-  public func select(_ qry: Swift.String, file: Swift.String = #file, line: Swift.Int = #line, ErrorHandling: Swift.Bool = true) -> [Swift.String : Swift.String]?
-}
-public var DF: NeuralEngine.DeviceFingerprintConnectionEstablisher
-public func oneLineGraph(_ title: Swift.String, _ shareNames: [Swift.String], _ percentages: [CoreFoundation.CGFloat], _ size: CoreFoundation.CGFloat = 350) -> some SwiftUICore.View
-
-@_Concurrency.MainActor @preconcurrency public struct PieSlice3D : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10PieSlice3DV4bodyQrvp", 0) __
-}
-public struct PieSlice : SwiftUICore.Shape {
-  nonisolated public func path(in rect: CoreFoundation.CGRect) -> SwiftUICore.Path
-  public typealias AnimatableData = SwiftUICore.EmptyAnimatableData
-  public typealias Body = SwiftUICore._ShapeView<NeuralEngine.PieSlice, SwiftUICore.ForegroundStyle>
-}
-public func pieChart3D(_ title: Swift.String, _ shareNames: [Swift.String], _ percentages: [CoreFoundation.CGFloat], _ size: CoreFoundation.CGFloat, _ colorScheme: SwiftUICore.ColorScheme) -> some SwiftUICore.View
-
-@_hasMissingDesignatedInitializers public class SqlTracker {
-  @objc deinit
-}
-@_inheritsConvenienceInitializers public class SQLize : NeuralEngine.DatabaseConnectionEstablisher {
-  public func read(_ columnNames: Swift.String, _ tableName: Swift.String, _ whereCondition: Swift.String = "", _ others: Swift.String = "", file: Swift.String = #file, line: Swift.Int = #line) -> [Swift.String : Swift.String]?
-  public func readRowByRow(_ columnNames: Swift.String, _ tableName: Swift.String, _ whereCondition: Swift.String = "", _ others: Swift.String = "", file: Swift.String = #file, line: Swift.Int = #line) -> [Swift.String : Swift.String]?
-  public func debug(line: Swift.Int, tag: Swift.String = "SQL Debug", file: Swift.String = #file) -> NeuralEngine.SqlTracker?
-  public func update(tableName: Swift.String, _ kvp: [Swift.String : Swift.String], localcounti: Swift.String) -> (counti: Swift.Int, success: Swift.Bool, selectQuery: Swift.String)
-  public func reset(line: Swift.Int = #line, file: Swift.String = #file) -> Swift.Bool
-  public func insert(_ tableName: Swift.String, _ kvp: [Swift.String : Swift.String], fileName: Swift.String = #file, line: Swift.Int = #line) -> (counti: Swift.Int, success: Swift.Bool, newlyinserted: Swift.Bool, query: Swift.String)
-  public func select(_ qry: Swift.String, file: Swift.String = #file, line: Swift.Int = #line, ErrorHandling: Swift.Bool = true) -> [Swift.String : Swift.String]?
-  public func freeInsert(_ tableName: Swift.String, _ kvp: [Swift.String : Swift.String], fileName: Swift.String = #file) -> (counti: Swift.Int, success: Swift.Bool, query: Swift.String)
-  public func delete(_ tableName: Swift.String, _ whereCondition: Swift.String, fileName: Swift.String = #file) -> (count: Swift.Int, success: Swift.Bool, query: Swift.String)
-  public func end(_ tableName: Swift.String, _ whereCondition: Swift.String, fileName: Swift.String = #file) -> (count: Swift.Int, success: Swift.Bool, query: Swift.String)
-  public func ivc(_ param: Swift.String) -> Swift.String
-  public func getPid(filename: Swift.String) -> Swift.String
-  public func segregateAndPrintCounti(_ output: (Swift.Bool, Any?)) -> Swift.Int
-  public func generateSelectQuery(tableName: Swift.String, data: [Swift.String : Any]) -> Swift.String
-  override public init()
-  @objc deinit
-}
-public var sql: NeuralEngine.SQLize
-public enum FieldType {
-  case text
-  case date
-  case time
-  case dateAndTime
-  case secure
-  public static func == (a: NeuralEngine.FieldType, b: NeuralEngine.FieldType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public struct TField : Swift.Identifiable {
-  public let id: Foundation.UUID
-  public var label: Swift.String
-  public var value: SwiftUICore.Binding<Swift.String>
-  public var width: CoreFoundation.CGFloat?
-  public var fieldType: NeuralEngine.FieldType
-  public init(label: Swift.String, value: SwiftUICore.Binding<Swift.String>, width: CoreFoundation.CGFloat? = nil, fieldType: NeuralEngine.FieldType)
-  public typealias ID = Foundation.UUID
-}
-@_Concurrency.MainActor @preconcurrency public struct RIBT : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(placeholder: Swift.String, value: SwiftUICore.Binding<Swift.String>, height: CoreFoundation.CGFloat = 50, width: CoreFoundation.CGFloat? = nil, fieldType: NeuralEngine.FieldType = .text)
-  @_Concurrency.MainActor @preconcurrency public init(multipleTextFields: [NeuralEngine.TField], height: CoreFoundation.CGFloat = 50, width: CoreFoundation.CGFloat? = nil)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine4RIBTV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct SettingsTextFieldList : SwiftUICore.View {
-  @SwiftUICore.State @_projectedValueProperty($isPasswordVisible) @_Concurrency.MainActor @preconcurrency public var isPasswordVisible: Swift.Bool {
-    get
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    nonmutating set
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    nonmutating _modify
-  }
-  @_Concurrency.MainActor @preconcurrency public var $isPasswordVisible: SwiftUICore.Binding<Swift.Bool> {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var width: CoreFoundation.CGFloat?
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var textFieldBackground: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine21SettingsTextFieldListV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct RIBTSingleField : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var width: CoreFoundation.CGFloat?
-  @_Concurrency.MainActor @preconcurrency public var floatingYOffset: CoreFoundation.CGFloat {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var maskYOffset: CoreFoundation.CGFloat {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var placeholderRestingYOffset: CoreFoundation.CGFloat {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var floatingLabelOffset: CoreFoundation.CGFloat {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var textFieldBackground: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func validateInput(_ text: Swift.String)
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine15RIBTSingleFieldV4bodyQrvp", 0) __
-}
-public func Notify(UID: Swift.String, msg: Swift.String)
-public var stars: [Swift.String : Swift.Int]
-@_Concurrency.MainActor @preconcurrency public struct StarRatingView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func animateStars(for selectedRating: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func getEmojiForRating(rating: Swift.Int) -> Swift.String
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14StarRatingViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct FixedStars : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func getEmojiForRating(rating: Swift.Int) -> Swift.String
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10FixedStarsV4bodyQrvp", 0) __
-}
-public var getSliderValue: [Swift.String : Swift.Double]
-@_Concurrency.MainActor @preconcurrency public struct BalloonSlider : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(startValue: Swift.Double, lastValue: Swift.Double, changeValue: Swift.Double, id: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13BalloonSliderV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct BalloonView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine11BalloonViewV4bodyQrvp", 0) __
-}
-public struct Triangle : SwiftUICore.Shape {
-  nonisolated public func path(in rect: CoreFoundation.CGRect) -> SwiftUICore.Path
-  public typealias AnimatableData = SwiftUICore.EmptyAnimatableData
-  public typealias Body = SwiftUICore._ShapeView<NeuralEngine.Triangle, SwiftUICore.ForegroundStyle>
-}
-public func sendSMS(phonenumber: Swift.String, message: Swift.String)
-public func sendEmail(email: Swift.String, subject: Swift.String, body: Swift.String)
-public func sendWhatsapp(groupName: Swift.String, msg: Swift.String)
-public func BarGraph(title1: Swift.String, shareNames: [Swift.String], percentage: [CoreFoundation.CGFloat], size: CoreFoundation.CGFloat) -> some SwiftUICore.View
-
-public func str_replace(_ search: Swift.String, _ replace: Swift.String, in originalString: Swift.String) -> Swift.String
-public func explode(_ delimiter: Swift.Character, _ string: Swift.String) -> [Swift.String]
-@_hasMissingDesignatedInitializers public class User {
-  public func setUserInfo(name: Swift.String, id: Swift.String, area: Swift.String, ownComCode: Swift.String)
-  public func getName() -> Swift.String
-  public func getId() -> Swift.String
-  public func getArea() -> Swift.String
-  public func getOwnComCode() -> Swift.String
-  @objc deinit
-}
-public var user: NeuralEngine.User
+public func cl<T>(_ object: Any? = nil, _ msg: T = "Reached Line $line : Iterated $i times", type: Swift.String = "Quick Print", line: Swift.Int = #line, function: Swift.String = #function, file: Swift.String = #file)
+public func cl<T>(_ msg: T = "Reached Line $line : Iterated $i times", type: Swift.String = "Quick Print", line: Swift.Int = #line, function: Swift.String = #function, file: Swift.String = #file)
 extension Swift.String {
   public subscript(i: Swift.Int) -> Swift.Character {
     get
   }
 }
-public var response_Query: [Swift.String]
-@_Concurrency.MainActor @preconcurrency public struct LoginWithOTP<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround> : SwiftUICore.View where P1 : SwiftUICore.View, P2 : SwiftUICore.View, P3 : SwiftUICore.View, P4 : SwiftUICore.View, P5 : SwiftUICore.View, P6 : SwiftUICore.View, P7 : SwiftUICore.View, P8 : SwiftUICore.View, P9 : SwiftUICore.View, P10 : SwiftUICore.View, WorkAround : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public struct AccessDenied : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
-  @_Concurrency.MainActor @preconcurrency public func verifyOTP()
-  @_Concurrency.MainActor @preconcurrency public func fetchTables(_ code: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func convertMySQLToSQLite(_ query: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func removeAfterLastParenthesis(from input: Swift.String) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func separateSQLQueries(from input: Swift.String) -> [Swift.String]
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12LoginWithOTPV4bodyQrvp", 0) __<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround>
-}
-@_Concurrency.MainActor @preconcurrency public struct OTPTextField : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func handleInput(_ newValue: Swift.String)
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12OTPTextFieldV4bodyQrvp", 0) __
-}
-@objc @_inheritsConvenienceInitializers public class DevEnvironmentResourceLocator : ObjectiveC.NSObject {
-  @objc override dynamic public init()
-  @objc deinit
-}
-extension Foundation.Bundle {
-  public static var devEnvironmentResources: Foundation.Bundle {
-    get
-  }
-}
-public func SQLiteEngineStrater()
-public func generateRandomAlphaNumeric(length: Swift.Int) -> Swift.String
-public func generateRandomNumber(length: Swift.Int) -> Swift.String
-public func generateRandomString(length: Swift.Int) -> Swift.String
-@_Concurrency.MainActor @preconcurrency public struct SmartTable : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func fetchDataFromDatabase()
-  @_Concurrency.MainActor @preconcurrency public init(db: Any, tablename: Swift.String, query: Swift.String = "SELECT * FROM ", headerNameMap: [Swift.String : Swift.String] = [:], headersOrder: [[Swift.String]]? = nil)
-  @_Concurrency.MainActor @preconcurrency public init(headers: [Swift.String], data: [[Swift.String]], headerNameMap: [Swift.String : Swift.String] = [:], headersOrder: [[Swift.String]]? = nil)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10SmartTableV4bodyQrvp", 0) __
-}
-extension Swift.String {
-  public subscript(range: Swift.String) -> Swift.String {
-    get
-  }
-  public func widthOfString(usingFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
-}
-@_Concurrency.MainActor @preconcurrency public struct SearchBar : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine9SearchBarV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct FilterDialog : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12FilterDialogV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct MinimizedTableView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine18MinimizedTableViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct CoverFlowTable : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14CoverFlowTableV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct ColumnView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10ColumnViewV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct HighlightedText : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine15HighlightedTextV4bodyQrvp", 0) __
-}
-extension NeuralEngine.SmartTable {
-  @_Concurrency.MainActor @preconcurrency public init(headers: [Swift.String], data: [[Swift.String]], headerNameMap: [Swift.String : Swift.String] = [:])
-}
-public var a: Swift.Int
-@_Concurrency.MainActor @preconcurrency public struct DevEnvironment<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround> : SwiftUICore.View where P1 : SwiftUICore.View, P2 : SwiftUICore.View, P3 : SwiftUICore.View, P4 : SwiftUICore.View, P5 : SwiftUICore.View, P6 : SwiftUICore.View, P7 : SwiftUICore.View, P8 : SwiftUICore.View, P9 : SwiftUICore.View, P10 : SwiftUICore.View, WorkAround : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9, p10: P10, workaround: WorkAround)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14DevEnvironmentV4bodyQrvp", 0) __<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround>
-}
-public func OTPNeverVerified() -> Swift.Bool
-public func OTPNotVerifiedToday() -> Swift.Bool
-public func reVerifyOTP() -> Swift.String
-public func separateSQLQueries(from input: Swift.String) -> [Swift.String]
-public func fetchTables(_ code: Swift.String)
-public func convertMySQLToSQLite(_ query: Swift.String)
-public func removeAfterLastParenthesis(from input: Swift.String) -> Swift.String
-public func LastVisitedPage() -> Swift.String?
-@_Concurrency.MainActor @preconcurrency public struct Background : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init()
-  @_Concurrency.MainActor @preconcurrency public var baseGradientColors: [SwiftUICore.Color] {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var isIpad: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var isIphone: Swift.Bool {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10BackgroundV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct MyProfile<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround> : SwiftUICore.View where P1 : SwiftUICore.View, P2 : SwiftUICore.View, P3 : SwiftUICore.View, P4 : SwiftUICore.View, P5 : SwiftUICore.View, P6 : SwiftUICore.View, P7 : SwiftUICore.View, P8 : SwiftUICore.View, P9 : SwiftUICore.View, P10 : SwiftUICore.View, WorkAround : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func progre(_ dead_Line: Swift.String, _ start_Line: Swift.String) -> Swift.Double
-  @_Concurrency.MainActor @preconcurrency public func fromet(_ sRat: Swift.String) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency public func calculateDaysRemaining(from dateString: Swift.String) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency public func calculateDaysRemaining(from dateString: Swift.String, startDate: Swift.String) -> Swift.Int
-  @_Concurrency.MainActor @preconcurrency public func getDocumentsDirectory() -> Foundation.URL
-  @_Concurrency.MainActor @preconcurrency public func downloadImage(_ filename: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func downloadImage(_ filename: Swift.String, _ a: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func downloadAndSaveImage(_ imageurl: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func downloadAndSaveImage(_ imageurl: Swift.String, _ a: Swift.Int)
-  @_Concurrency.MainActor @preconcurrency public func getCurrentTimestamp() -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func generateRandomString(length: Swift.Int) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func formatDate(_ dateString: Swift.String) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func destinationView(_ inputText: Swift.String) -> some SwiftUICore.View
-  
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine9MyProfileV4bodyQrvp", 0) __<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround>
-}
-@_Concurrency.MainActor @preconcurrency public struct SomethingWorng : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14SomethingWorngV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct StarRatingBar : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func getEmoji(for rating: Swift.Int) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func playSound(for rating: Swift.Int)
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13StarRatingBarV4bodyQrvp", 0) __
-}
-public func pieChart(title: Swift.String, shareNames: [Swift.String], percentages: [CoreFoundation.CGFloat], _ size: CoreFoundation.CGFloat) -> some SwiftUICore.View
-
-@_Concurrency.MainActor @preconcurrency public struct AccessDenied : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func playSound()
+  public func playSound()
   public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12AccessDeniedV4bodyQrvp", 0) __
 }
-public func liquidGlass(content: SwiftUICore.AnyView) -> some SwiftUICore.View
-
-public func cl<T>(_ object: Any? = nil, _ msg: T = "Reached Line $line : Iterated $i times", type: Swift.String = "Quick Print", line: Swift.Int = #line, function: Swift.String = #function, file: Swift.String = #file)
-public func cl<T>(_ msg: T = "Reached Line $line : Iterated $i times", type: Swift.String = "Quick Print", line: Swift.Int = #line, function: Swift.String = #function, file: Swift.String = #file)
 public func getDate() -> Swift.String
 public func getTime() -> Swift.String
 public func formatDate(_ inputString: Swift.String) -> Swift.String
@@ -727,55 +60,267 @@ public var Clock: NeuralEngine.ClockEstablishment
   public func get(format: Swift.String) -> Swift.String
   @objc deinit
 }
-@_Concurrency.MainActor @preconcurrency public struct FileUploadView : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(selectedFileNames: SwiftUICore.Binding<[Swift.String]>)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public struct MultiLineGraph : SwiftUI.View {
+  public init(title: Swift.String, shareNames: [Swift.String], percentageSets: [[CoreFoundation.CGFloat]], labels: [Swift.String], size: CoreFoundation.CGFloat = 350)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
-  @_Concurrency.MainActor @preconcurrency public func fileNameDisplay(_ fileName: Swift.String) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func importFile()
-  @_Concurrency.MainActor @preconcurrency public func removeFile(_ fileName: Swift.String)
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14FileUploadViewV4bodyQrvp", 0) __
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14MultiLineGraphV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct BlurView : SwiftUI.UIViewRepresentable {
-  @_Concurrency.MainActor @preconcurrency public init(style: UIKit.UIBlurEffect.Style)
-  @_Concurrency.MainActor @preconcurrency public func makeUIView(context: NeuralEngine.BlurView.Context) -> UIKit.UIVisualEffectView
-  @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: UIKit.UIVisualEffectView, context: NeuralEngine.BlurView.Context)
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-  public typealias UIViewType = UIKit.UIVisualEffectView
-}
-public func GeneratePDF(queries: [Swift.String], headers: [[Swift.String]], titles: [Swift.String], pdfData: SwiftUICore.Binding<Foundation.Data?>, showPDF: SwiftUICore.Binding<Swift.Bool>, landScape: Swift.Bool = false, mainSectionTitles: [(title: Swift.String, range: Swift.Range<Swift.Int>)] = [])
-public struct PDFManager {
-  public init()
-  public static func generatePDF(queries: [Swift.String], headers: [[Swift.String]], titles: [Swift.String], landScape: Swift.Bool, mainSectionTitles: [(title: Swift.String, range: Swift.Range<Swift.Int>)], completion: @escaping (Foundation.Data?) -> Swift.Void)
-}
-@_Concurrency.MainActor @preconcurrency public struct PDFViewer : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(data: Foundation.Data)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public struct VideoUploader : SwiftUI.View {
+  public init(id: Swift.String)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine9PDFViewerV4bodyQrvp", 0) __
+  public func coverFlowView() -> some SwiftUI.View
+  
+  public func coverItem(for index: Swift.Int) -> some SwiftUI.View
+  
+  public func createPlayer(for index: Swift.Int, videoName: Swift.String) -> AVFoundation.AVPlayer?
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13VideoUploaderV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct PDFKitView : SwiftUI.UIViewRepresentable {
-  @_Concurrency.MainActor @preconcurrency public let data: Foundation.Data
-  @_Concurrency.MainActor @preconcurrency public init(data: Foundation.Data)
-  @_Concurrency.MainActor @preconcurrency public func makeUIView(context: NeuralEngine.PDFKitView.Context) -> PDFKit.PDFView
-  @_Concurrency.MainActor @preconcurrency public func updateUIView(_ uiView: PDFKit.PDFView, context: NeuralEngine.PDFKitView.Context)
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-  public typealias UIViewType = PDFKit.PDFView
+public struct MyProfile<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround> : SwiftUI.View where P1 : SwiftUI.View, P2 : SwiftUI.View, P3 : SwiftUI.View, P4 : SwiftUI.View, P5 : SwiftUI.View, P6 : SwiftUI.View, P7 : SwiftUI.View, P8 : SwiftUI.View, P9 : SwiftUI.View, P10 : SwiftUI.View, WorkAround : SwiftUI.View {
+  public func progre(_ dead_Line: Swift.String, _ start_Line: Swift.String) -> Swift.Double
+  public func fromet(_ sRat: Swift.String) -> Swift.Int
+  public func calculateDaysRemaining(from dateString: Swift.String) -> Swift.Int
+  public func calculateDaysRemaining(from dateString: Swift.String, startDate: Swift.String) -> Swift.Int
+  public func getDocumentsDirectory() -> Foundation.URL
+  public func downloadImage(_ filename: Swift.String)
+  public func downloadImage(_ filename: Swift.String, _ a: Swift.Int)
+  public func downloadAndSaveImage(_ imageurl: Swift.String)
+  public func downloadAndSaveImage(_ imageurl: Swift.String, _ a: Swift.Int)
+  public func getCurrentTimestamp() -> Swift.String
+  public func generateRandomString(length: Swift.Int) -> Swift.String
+  public func formatDate(_ dateString: Swift.String) -> Swift.String
+  public func destinationView(_ inputText: Swift.String) -> some SwiftUI.View
+  
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine9MyProfileV4bodyQrvp", 0) __<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround>
 }
-@_Concurrency.MainActor @preconcurrency public struct ShareSheet : SwiftUI.UIViewControllerRepresentable {
-  @_Concurrency.MainActor @preconcurrency public let activityItems: [Any]
-  @_Concurrency.MainActor @preconcurrency public init(activityItems: [Any])
-  @_Concurrency.MainActor @preconcurrency public func makeUIViewController(context: NeuralEngine.ShareSheet.Context) -> UIKit.UIActivityViewController
-  @_Concurrency.MainActor @preconcurrency public func updateUIViewController(_ uiViewController: UIKit.UIActivityViewController, context: NeuralEngine.ShareSheet.Context)
-  public typealias Body = Swift.Never
-  public typealias Coordinator = Swift.Void
-  public typealias UIViewControllerType = UIKit.UIActivityViewController
+public struct SomethingWorng : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14SomethingWorngV4bodyQrvp", 0) __
 }
-public func DrawTable(headers: [Swift.String], dataSets: [[Swift.String]], startY: inout CoreFoundation.CGFloat, landScape: Swift.Bool = false, currentContext: UIKit.UIGraphicsPDFRendererContext?)
+public protocol PaginationDelegate : SwiftUI.View {
+  var pnSearch: Swift.String { get set }
+}
+public struct Pagination<T> : SwiftUI.View where T : NeuralEngine.PaginationDelegate {
+  public var PageSize: Swift.Int
+  public var id: Swift.String
+  public var paginationData: [T]
+  public var maxPageNumbersToShow: Swift.Int
+  public let debounceInterval: Swift.Double
+  public init(PageSize: Swift.Int, id: Swift.String, paginationData: [T], maxPageNumbersToShow: Swift.Int = 3)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func emptyData()
+  public var currentItems: [T] {
+    get
+  }
+  public func loadPage(page: Swift.Int)
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10PaginationV4bodyQrvp", 0) __<T>
+}
+public struct PaginationView : SwiftUI.View {
+  public init(currentPage: SwiftUI.Binding<Swift.Int>, totalPages: Swift.Int, onPageChange: @escaping (Swift.Int) -> Swift.Void, maxPageNumbersToShow: Swift.Int)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func pageNumbersToDisplay(maxPageNumbersToShow: Swift.Int) -> [Swift.Int]
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14PaginationViewV4bodyQrvp", 0) __
+}
+@_hasMissingDesignatedInitializers public class SqlTracker {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class SQLize : NeuralEngine.DatabaseConnectionEstablisher {
+  public func read(_ columnNames: Swift.String, _ tableName: Swift.String, _ whereCondition: Swift.String = "", _ others: Swift.String = "", file: Swift.String = #file, line: Swift.Int = #line) -> [Swift.String : Swift.String]?
+  public func readRowByRow(_ columnNames: Swift.String, _ tableName: Swift.String, _ whereCondition: Swift.String = "", _ others: Swift.String = "", file: Swift.String = #file, line: Swift.Int = #line) -> [Swift.String : Swift.String]?
+  public func debug(line: Swift.Int, tag: Swift.String = "SQL Debug", file: Swift.String = #file) -> NeuralEngine.SqlTracker?
+  public func update(tableName: Swift.String, _ kvp: [Swift.String : Swift.String], localcounti: Swift.String) -> (counti: Swift.Int, success: Swift.Bool, selectQuery: Swift.String)
+  public func reset(line: Swift.Int = #line, file: Swift.String = #file) -> Swift.Bool
+  public func insert(_ tableName: Swift.String, _ kvp: [Swift.String : Swift.String], fileName: Swift.String = #file, line: Swift.Int = #line) -> (counti: Swift.Int, success: Swift.Bool, newlyinserted: Swift.Bool, query: Swift.String)
+  public func select(_ qry: Swift.String, file: Swift.String = #file, line: Swift.Int = #line, ErrorHandling: Swift.Bool = true) -> [Swift.String : Swift.String]?
+  public func freeInsert(_ tableName: Swift.String, _ kvp: [Swift.String : Swift.String], fileName: Swift.String = #file) -> (counti: Swift.Int, success: Swift.Bool, query: Swift.String)
+  public func delete(_ tableName: Swift.String, _ whereCondition: Swift.String, fileName: Swift.String = #file) -> (count: Swift.Int, success: Swift.Bool, query: Swift.String)
+  public func end(_ tableName: Swift.String, _ whereCondition: Swift.String, fileName: Swift.String = #file) -> (count: Swift.Int, success: Swift.Bool, query: Swift.String)
+  public func ivc(_ param: Swift.String) -> Swift.String
+  public func getPid(filename: Swift.String) -> Swift.String
+  public func segregateAndPrintCounti(_ output: (Swift.Bool, Any?)) -> Swift.Int
+  public func generateSelectQuery(tableName: Swift.String, data: [Swift.String : Any]) -> Swift.String
+  override public init()
+  @objc deinit
+}
+public var sql: NeuralEngine.SQLize
+public var getSliderValue: [Swift.String : Swift.Double]
+public struct BalloonSlider : SwiftUI.View {
+  public init(startValue: Swift.Double, lastValue: Swift.Double, changeValue: Swift.Double, id: Swift.String)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13BalloonSliderV4bodyQrvp", 0) __
+}
+public struct BalloonView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine11BalloonViewV4bodyQrvp", 0) __
+}
+public struct Triangle : SwiftUI.Shape {
+  public func path(in rect: CoreFoundation.CGRect) -> SwiftUI.Path
+  public typealias AnimatableData = SwiftUI.EmptyAnimatableData
+  public typealias Body = SwiftUI._ShapeView<NeuralEngine.Triangle, SwiftUI.ForegroundStyle>
+}
+public struct AudioUploderView : SwiftUI.View {
+  public init(audioFiles: [Swift.String])
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func revealNextAudioCard()
+  public func togglePlayPause(at index: Swift.Int)
+  public func playAudio(at index: Swift.Int)
+  public func seekToProgress(_ progress: CoreFoundation.CGFloat, for index: Swift.Int)
+  public func startTimer(for index: Swift.Int)
+  public func updateCurrentTime(for index: Swift.Int)
+  public func getTotalAudioDuration(url: Foundation.URL) -> Swift.String
+  public func toggleDeleteButton(for index: Swift.Int)
+  public func deleteAudio(at index: Swift.Int)
+  public func resetAudioCard(for index: Swift.Int)
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16AudioUploderViewV4bodyQrvp", 0) __
+}
+public func extractWaveform(from url: Foundation.URL) -> [CoreFoundation.CGFloat]
+public func WaveformView(samples: [CoreFoundation.CGFloat], playProgress: SwiftUI.Binding<CoreFoundation.CGFloat>, onSeek: @escaping (CoreFoundation.CGFloat) -> Swift.Void) -> some SwiftUI.View
+
+public func downsample(_ samples: [CoreFoundation.CGFloat], to targetCount: Swift.Int) -> [CoreFoundation.CGFloat]
+extension Swift.Comparable {
+  public func clamped(to limits: Swift.ClosedRange<Self>) -> Self
+}
+extension CoreFoundation.CGFloat {
+  public func clamped(to limits: Swift.ClosedRange<CoreFoundation.CGFloat>) -> CoreFoundation.CGFloat
+}
+extension Swift.Array {
+  public func chunked(into size: Swift.Int) -> [[Element]]
+}
+extension SwiftUI.Color {
+  public static let goldGradient: SwiftUI.LinearGradient
+}
+public func BigTranslucentCard<Content>(@SwiftUI.ViewBuilder content: @escaping () -> Content) -> some SwiftUI.View where Content : SwiftUI.View
+
+public func SmallTranslucentCard<Content>(@SwiftUI.ViewBuilder content: @escaping () -> Content) -> some SwiftUI.View where Content : SwiftUI.View
+
+@objc @_inheritsConvenienceInitializers public class AudioPlayerDelegate : ObjectiveC.NSObject, AVFAudio.AVAudioPlayerDelegate {
+  @objc public func audioPlayerDidFinishPlaying(_ player: AVFAudio.AVAudioPlayer, successfully flag: Swift.Bool)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func oneLineGraph(_ title: Swift.String, _ shareNames: [Swift.String], _ percentages: [CoreFoundation.CGFloat], _ size: CoreFoundation.CGFloat = 350) -> some SwiftUI.View
+
+public struct StarRatingBar : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func getEmoji(for rating: Swift.Int) -> Swift.String
+  public func playSound(for rating: Swift.Int)
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13StarRatingBarV4bodyQrvp", 0) __
+}
+public func BarGraph(title1: Swift.String, shareNames: [Swift.String], percentage: [CoreFoundation.CGFloat], size: CoreFoundation.CGFloat) -> some SwiftUI.View
+
+public struct DoubleDoughnutChart : SwiftUI.View {
+  public init(title: Swift.String = "", shareNames: [Swift.String], percentages: [CoreFoundation.CGFloat], size: CoreFoundation.CGFloat = 270, centerText: Swift.String? = nil, centerImage: SwiftUI.Image? = nil)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func isTextOverlappingArc(text: Swift.String, startAngle: CoreFoundation.CGFloat, endAngle: CoreFoundation.CGFloat, letterSpacingDegrees: CoreFoundation.CGFloat = 5) -> Swift.Bool
+  public func truncatedText(for text: Swift.String, startAngle: CoreFoundation.CGFloat, endAngle: CoreFoundation.CGFloat, letterSpacingDegrees: CoreFoundation.CGFloat = 5) -> Swift.String
+  public func colorForIndex(_ index: Swift.Int, total: Swift.Int) -> SwiftUI.Color
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine19DoubleDoughnutChartV4bodyQrvp", 0) __
+}
+public struct CircleSegment : SwiftUI.Shape {
+  public init(startAngle: SwiftUI.Angle, sweepAngle: SwiftUI.Angle)
+  public func path(in rect: CoreFoundation.CGRect) -> SwiftUI.Path
+  public typealias AnimatableData = SwiftUI.EmptyAnimatableData
+  public typealias Body = SwiftUI._ShapeView<NeuralEngine.CircleSegment, SwiftUI.ForegroundStyle>
+}
+public struct CurvedText2 : SwiftUI.View {
+  public init(text: Swift.String, radius: CoreFoundation.CGFloat, angle: Swift.Double, center: CoreFoundation.CGPoint)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine11CurvedText2V4bodyQrvp", 0) __
+}
+public struct CurvedText : SwiftUI.View {
+  public init(text: Swift.String, radius: CoreFoundation.CGFloat, angle: Swift.Double, center: CoreFoundation.CGPoint)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10CurvedTextV4bodyQrvp", 0) __
+}
+public func str_replace(_ search: Swift.String, _ replace: Swift.String, in originalString: Swift.String) -> Swift.String
+public func explode(_ delimiter: Swift.Character, _ string: Swift.String) -> [Swift.String]
+public struct SmartTable : SwiftUI.View {
+  public func fetchDataFromDatabase()
+  public init(db: Any, tablename: Swift.String, query: Swift.String = "SELECT * FROM ", headerNameMap: [Swift.String : Swift.String] = [:], headersOrder: [[Swift.String]]? = nil)
+  public init(headers: [Swift.String], data: [[Swift.String]], headerNameMap: [Swift.String : Swift.String] = [:], headersOrder: [[Swift.String]]? = nil)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10SmartTableV4bodyQrvp", 0) __
+}
+extension Swift.String {
+  public subscript(range: Swift.String) -> Swift.String {
+    get
+  }
+  public func widthOfString(usingFont font: UIKit.UIFont) -> CoreFoundation.CGFloat
+}
+public struct SearchBar : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine9SearchBarV4bodyQrvp", 0) __
+}
+public struct FilterDialog : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12FilterDialogV4bodyQrvp", 0) __
+}
+public struct MinimizedTableView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine18MinimizedTableViewV4bodyQrvp", 0) __
+}
+public struct CoverFlowTable : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14CoverFlowTableV4bodyQrvp", 0) __
+}
+public struct ColumnView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10ColumnViewV4bodyQrvp", 0) __
+}
+public struct HighlightedText : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine15HighlightedTextV4bodyQrvp", 0) __
+}
+extension NeuralEngine.SmartTable {
+  public init(headers: [Swift.String], data: [[Swift.String]], headerNameMap: [Swift.String : Swift.String] = [:])
+}
+public func generateRandomAlphaNumeric(length: Swift.Int) -> Swift.String
+public func generateRandomNumber(length: Swift.Int) -> Swift.String
+public func generateRandomString(length: Swift.Int) -> Swift.String
+public func sendSMS(phonenumber: Swift.String, message: Swift.String)
+public func sendEmail(email: Swift.String, subject: Swift.String, body: Swift.String)
+public func sendWhatsapp(groupName: Swift.String, msg: Swift.String)
+public func enqry(_ query: Swift.String) -> Swift.String
 public func validatePhoneNumber(_ phoneNumber: Swift.String) -> (Swift.Bool, Swift.String)
 public func validateName(_ name: Swift.String) -> (Swift.Bool, Swift.String)
 public func validateOTP(_ OTP: Swift.String) -> (Swift.Bool, Swift.String)
@@ -785,165 +330,568 @@ public func isValidAge(_ dateOfBirth: Foundation.Date, minimumAge: Swift.Int = 1
 public func isValidCreditCard(_ number: Swift.String) -> Swift.Bool
 public func isFieldNotEmpty(_ input: Swift.String?) -> Swift.Bool
 public func isValidSSN(_ ssn: Swift.String) -> Swift.Bool
-@_Concurrency.MainActor @preconcurrency public struct SmartAlert : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String, showAlert: SwiftUICore.Binding<Swift.Bool>)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public enum FieldType {
+  case text
+  case date
+  case time
+  case dateAndTime
+  case secure
+  public static func == (a: NeuralEngine.FieldType, b: NeuralEngine.FieldType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
     get
   }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10SmartAlertV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct SmartConfirmAlert : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String, onConfirm: @escaping () -> Swift.Void, onCancel: @escaping () -> Swift.Void, showAlert: SwiftUICore.Binding<Swift.Bool>)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public struct TField : Swift.Identifiable {
+  public let id: Foundation.UUID
+  public var label: Swift.String
+  public var value: SwiftUI.Binding<Swift.String>
+  public var width: CoreFoundation.CGFloat?
+  public var fieldType: NeuralEngine.FieldType
+  public typealias ID = Foundation.UUID
+}
+public struct RIBT : SwiftUI.View {
+  public init(placeholder: Swift.String, value: SwiftUI.Binding<Swift.String>, height: CoreFoundation.CGFloat = 50, width: CoreFoundation.CGFloat? = nil, fieldType: NeuralEngine.FieldType = .text)
+  public init(multipleTextFields: [NeuralEngine.TField], height: CoreFoundation.CGFloat = 50, width: CoreFoundation.CGFloat? = nil)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine17SmartConfirmAlertV4bodyQrvp", 0) __
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine4RIBTV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct SmartPrompt : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String, content: Swift.String, isPresented: SwiftUICore.Binding<Swift.Bool>, onConfirm: @escaping (Swift.String?) -> Swift.Void, onCancel: @escaping (Swift.String?) -> Swift.Void)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public struct SettingsTextFieldList : SwiftUI.View {
+  @SwiftUI.State @_projectedValueProperty($isPasswordVisible) public var isPasswordVisible: Swift.Bool {
+    get
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    nonmutating set
+    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+    nonmutating _modify
+  }
+  public var $isPasswordVisible: SwiftUI.Binding<Swift.Bool> {
     get
   }
-  @_Concurrency.MainActor @preconcurrency public func closePrompt()
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine11SmartPromptV4bodyQrvp", 0) __
+  public var width: CoreFoundation.CGFloat?
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public var textFieldBackground: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine21SettingsTextFieldListV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct PromptButtonStyle : SwiftUI.ButtonStyle {
-  @_Concurrency.MainActor @preconcurrency public func makeBody(configuration: NeuralEngine.PromptButtonStyle.Configuration) -> some SwiftUICore.View
+public struct RIBTSingleField : SwiftUI.View {
+  public var width: CoreFoundation.CGFloat?
+  public var floatingYOffset: CoreFoundation.CGFloat {
+    get
+  }
+  public var maskYOffset: CoreFoundation.CGFloat {
+    get
+  }
+  public var placeholderRestingYOffset: CoreFoundation.CGFloat {
+    get
+  }
+  public var floatingLabelOffset: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public var textFieldBackground: some SwiftUI.View {
+    get
+  }
+  public func validateInput(_ text: Swift.String)
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine15RIBTSingleFieldV4bodyQrvp", 0) __
+}
+public struct FillFromDatabase : SwiftUI.View {
+  public init(BindVar: SwiftUI.Binding<Swift.String>, Query: Swift.String, ErrorApnd: Swift.String, SelectBoxName: Swift.String, FirstDeafultValue: Swift.String = "")
+  public func ProjectDropdown(query: Swift.String) -> [Swift.String]
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func customPicker(label: Swift.String, selection: SwiftUI.Binding<Swift.String>) -> some SwiftUI.View
   
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine17PromptButtonStyleV8makeBody13configurationQr7SwiftUI0dE13ConfigurationV_tF", 0) __
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16FillFromDatabaseV4bodyQrvp", 0) __
+}
+public struct DropDown : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public init(BindVar: SwiftUI.Binding<Swift.String>, ShowArray: [Swift.String], ErrorApnd: Swift.String, SelectBoxName: Swift.String, FirstDeafultValue: Swift.String = "")
+  public func customPicker(label: Swift.String, selection: SwiftUI.Binding<Swift.String>) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine8DropDownV4bodyQrvp", 0) __
+}
+public func liquidGlass(content: SwiftUI.AnyView) -> some SwiftUI.View
+
+public func backgrounfCard(content: SwiftUI.AnyView) -> some SwiftUI.View
+
+extension SwiftUI.View {
+  public func backgroundCard(cardWidth: CoreFoundation.CGFloat = 370) -> some SwiftUI.View
+  
+}
+extension SwiftUI.View {
+  public func liquidGlass(cardWidth: CoreFoundation.CGFloat = 370) -> some SwiftUI.View
+  
+}
+public func SQLiteEngineStrater()
+public func pieChart(title: Swift.String, shareNames: [Swift.String], percentages: [CoreFoundation.CGFloat], _ size: CoreFoundation.CGFloat) -> some SwiftUI.View
+
+public struct CheckmarkAnimationView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func customGradient() -> SwiftUI.LinearGradient
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine22CheckmarkAnimationViewV4bodyQrvp", 0) __
+}
+public struct CheckmarkShape : SwiftUI.Shape {
+  public func path(in rect: CoreFoundation.CGRect) -> SwiftUI.Path
+  public typealias AnimatableData = SwiftUI.EmptyAnimatableData
+  public typealias Body = SwiftUI._ShapeView<NeuralEngine.CheckmarkShape, SwiftUI.ForegroundStyle>
+}
+public struct ParticleView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func generateParticles()
+  public func customGradient() -> SwiftUI.LinearGradient
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12ParticleViewV4bodyQrvp", 0) __
 }
 public func ua(_ input: Swift.String) -> Swift.String
 public func uc(_ input: Swift.String) -> Swift.String
 public func nfi(_ input: Swift.String) -> Swift.String
 public func numberToText(_ number: Swift.Int64) -> Swift.String
-@_Concurrency.MainActor @preconcurrency public struct ContactOurDeveloper : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func openWhatsApp(_ phoneNumber: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func makeCall(_ phoneNumber: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func sendEmail(_ emailAddress: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public func openInstagram(_ instagramUsername: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public var response_Query: [Swift.String]
+public struct LoginWithOTP<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround> : SwiftUI.View where P1 : SwiftUI.View, P2 : SwiftUI.View, P3 : SwiftUI.View, P4 : SwiftUI.View, P5 : SwiftUI.View, P6 : SwiftUI.View, P7 : SwiftUI.View, P8 : SwiftUI.View, P9 : SwiftUI.View, P10 : SwiftUI.View, WorkAround : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func verifyOTP()
+  public func fetchTables(_ code: Swift.String)
+  public func convertMySQLToSQLite(_ query: Swift.String)
+  public func removeAfterLastParenthesis(from input: Swift.String) -> Swift.String
+  public func separateSQLQueries(from input: Swift.String) -> [Swift.String]
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12LoginWithOTPV4bodyQrvp", 0) __<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround>
+}
+public struct OTPTextField : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func handleInput(_ newValue: Swift.String)
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine12OTPTextFieldV4bodyQrvp", 0) __
+}
+@objc @_inheritsConvenienceInitializers public class DevEnvironmentResourceLocator : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Foundation.Bundle {
+  public static var devEnvironmentResources: Foundation.Bundle {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class User {
+  public func setUserInfo(name: Swift.String, id: Swift.String, area: Swift.String, ownComCode: Swift.String)
+  public func getName() -> Swift.String
+  public func getId() -> Swift.String
+  public func getArea() -> Swift.String
+  public func getOwnComCode() -> Swift.String
+  @objc deinit
+}
+public var user: NeuralEngine.User
+public class DatabaseConnectionEstablisher {
+  public var db: Swift.OpaquePointer?
+  public var path: Swift.String
+  public init()
+  @objc deinit
+  public func restart()
+  public func executeQuery(_ query: Swift.String) -> (Swift.Bool, [[Swift.String : Swift.String]]?)
+}
+@_hasMissingDesignatedInitializers public class DevOpsConnectionEstablisher {
+  @objc deinit
+  public func restart()
+  public func executeQuery(_ query: Swift.String) -> (Swift.Bool, [[Swift.String : Swift.String]]?)
+  public func select(_ qry: Swift.String, file: Swift.String = #file, line: Swift.Int = #line, ErrorHandling: Swift.Bool = true) -> [Swift.String : Swift.String]?
+}
+public var DevOps: NeuralEngine.DevOpsConnectionEstablisher
+@_hasMissingDesignatedInitializers public class DeviceFingerprintConnectionEstablisher {
+  @objc deinit
+  public func restart()
+  public func executeQuery(_ query: Swift.String) -> (Swift.Bool, [[Swift.String : Swift.String]]?)
+  public func reset(line: Swift.Int = #line, file: Swift.String = #file) -> Swift.Bool
+  public func select(_ qry: Swift.String, file: Swift.String = #file, line: Swift.Int = #line, ErrorHandling: Swift.Bool = true) -> [Swift.String : Swift.String]?
+}
+public var DF: NeuralEngine.DeviceFingerprintConnectionEstablisher
+public var stars: [Swift.String : Swift.Int]
+public struct StarRatingView : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func animateStars(for selectedRating: Swift.Int)
+  public func getEmojiForRating(rating: Swift.Int) -> Swift.String
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14StarRatingViewV4bodyQrvp", 0) __
+}
+public struct FixedStars : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func getEmojiForRating(rating: Swift.Int) -> Swift.String
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10FixedStarsV4bodyQrvp", 0) __
+}
+public struct FileUploadView : SwiftUI.View {
+  public init(selectedFileNames: SwiftUI.Binding<[Swift.String]>)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func fileNameDisplay(_ fileName: Swift.String) -> Swift.String
+  public func importFile()
+  public func removeFile(_ fileName: Swift.String)
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14FileUploadViewV4bodyQrvp", 0) __
+}
+public struct BlurView : SwiftUI.UIViewRepresentable {
+  public init(style: UIKit.UIBlurEffect.Style)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: NeuralEngine.BlurView.Context) -> UIKit.UIVisualEffectView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: UIKit.UIVisualEffectView, context: NeuralEngine.BlurView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = UIKit.UIVisualEffectView
+}
+public struct PieSlice3D : SwiftUI.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10PieSlice3DV4bodyQrvp", 0) __
+}
+public struct PieSlice : SwiftUI.Shape {
+  public func path(in rect: CoreFoundation.CGRect) -> SwiftUI.Path
+  public typealias AnimatableData = SwiftUI.EmptyAnimatableData
+  public typealias Body = SwiftUI._ShapeView<NeuralEngine.PieSlice, SwiftUI.ForegroundStyle>
+}
+public func pieChart3D(_ title: Swift.String, _ shareNames: [Swift.String], _ percentages: [CoreFoundation.CGFloat], _ size: CoreFoundation.CGFloat, _ colorScheme: SwiftUI.ColorScheme) -> some SwiftUI.View
+
+extension SwiftUI.Color {
+  public static let lightSalmonRed: SwiftUI.Color
+  public static let salmonRed: SwiftUI.Color
+  public static let lightCoralRed: SwiftUI.Color
+  public static let pinkRed: SwiftUI.Color
+  public static let hotPinkRed: SwiftUI.Color
+  public static let brightRed: SwiftUI.Color
+  public static let mediumRed: SwiftUI.Color
+  public static let darkRed: SwiftUI.Color
+  public static let maroonRed: SwiftUI.Color
+  public static let burgundyRed: SwiftUI.Color
+  public static let chestnutRed: SwiftUI.Color
+  public static let crimsonRed: SwiftUI.Color
+  public static let firebrickRed: SwiftUI.Color
+  public static let indianRed: SwiftUI.Color
+  public static let lightPinkRed: SwiftUI.Color
+  public static let darkSalmonRed: SwiftUI.Color
+  public static let bloodRed: SwiftUI.Color
+  public static let oxbloodRed: SwiftUI.Color
+  public static let mintGreen: SwiftUI.Color
+  public static let honeydewGreen: SwiftUI.Color
+  public static let lightGreen: SwiftUI.Color
+  public static let paleGreen: SwiftUI.Color
+  public static let limeGreen: SwiftUI.Color
+  public static let mediumSpringGreen: SwiftUI.Color
+  public static let springGreen: SwiftUI.Color
+  public static let forestGreen: SwiftUI.Color
+  public static let seaGreen: SwiftUI.Color
+  public static let darkGreen: SwiftUI.Color
+  public static let oliveDrabGreen: SwiftUI.Color
+  public static let tealGreen: SwiftUI.Color
+  public static let darkCyanGreen: SwiftUI.Color
+  public static let lightSeaGreen: SwiftUI.Color
+  public static let mediumSeaGreen: SwiftUI.Color
+  public static let darkOliveGreen: SwiftUI.Color
+  public static let darkSlateGrayGreen: SwiftUI.Color
+  public static let darkForestGreen: SwiftUI.Color
+  public static let skyBlue: SwiftUI.Color
+  public static let powderBlue: SwiftUI.Color
+  public static let lightBlue: SwiftUI.Color
+  public static let aliceBlue: SwiftUI.Color
+  public static let dodgerBlue: SwiftUI.Color
+  public static let cornflowerBlue: SwiftUI.Color
+  public static let steelBlue: SwiftUI.Color
+  public static let darkBlue: SwiftUI.Color
+  public static let navy: SwiftUI.Color
+  public static let midnightBlue: SwiftUI.Color
+  public static let prussianBlue: SwiftUI.Color
+  public static let tealBlue: SwiftUI.Color
+  public static let ceruleanBlue: SwiftUI.Color
+  public static let sapphireBlue: SwiftUI.Color
+  public static let azureBlue: SwiftUI.Color
+  public static let indigoBlue: SwiftUI.Color
+  public static let darkSlateBlue: SwiftUI.Color
+  public static let deepSkyBlue: SwiftUI.Color
+  public static let lightYellow: SwiftUI.Color
+  public static let lemonChiffonYellow: SwiftUI.Color
+  public static let paleYellow: SwiftUI.Color
+  public static let mellowYellow: SwiftUI.Color
+  public static let schoolBusYellow: SwiftUI.Color
+  public static let goldYellow: SwiftUI.Color
+  public static let canaryYellow: SwiftUI.Color
+  public static let goldenrodYellow: SwiftUI.Color
+  public static let darkGoldenrodYellow: SwiftUI.Color
+  public static let mustardYellow: SwiftUI.Color
+  public static let cyberYellow: SwiftUI.Color
+  public static let saffronYellow: SwiftUI.Color
+  public static let honeyYellow: SwiftUI.Color
+  public static let tungstenYellow: SwiftUI.Color
+  public static let jasmineYellow: SwiftUI.Color
+  public static let amberYellow: SwiftUI.Color
+  public static let bronzeYellow: SwiftUI.Color
+  public static let citrineYellow: SwiftUI.Color
+  public static let charcoalGrayBlack: SwiftUI.Color
+  public static let onyxGrayBlack: SwiftUI.Color
+  public static let outerSpaceBlack: SwiftUI.Color
+  public static let jetGrayBlack: SwiftUI.Color
+  public static let vulcanBlack: SwiftUI.Color
+  public static let eerieBlack: SwiftUI.Color
+  public static let almostBlack: SwiftUI.Color
+  public static let pitchBlack: SwiftUI.Color
+  public static let pureBlack: SwiftUI.Color
+  public static let lavenderPurples: SwiftUI.Color
+  public static let thistlePurples: SwiftUI.Color
+  public static let plumLightPurples: SwiftUI.Color
+  public static let orchidLightPurples: SwiftUI.Color
+  public static let orchidPurples: SwiftUI.Color
+  public static let violetPurples: SwiftUI.Color
+  public static let amethystPurples: SwiftUI.Color
+  public static let purpleDark: SwiftUI.Color
+  public static let indigoPurples: SwiftUI.Color
+  public static let eggplantPurples: SwiftUI.Color
+  public static let grapePurples: SwiftUI.Color
+  public static let lilacPurples: SwiftUI.Color
+  public static let mauvePurples: SwiftUI.Color
+  public static let byzantiumPurples: SwiftUI.Color
+  public static let fuchsiaPurples: SwiftUI.Color
+  public static let darkMagentaPurples: SwiftUI.Color
+  public static let deepPurple: SwiftUI.Color
+  public static let midnightPurple: SwiftUI.Color
+  public static let pureWhite: SwiftUI.Color
+  public static let creamWhite: SwiftUI.Color
+  public static let ivoryWhite: SwiftUI.Color
+  public static let oldLaceWhite: SwiftUI.Color
+  public static let seashellWhite: SwiftUI.Color
+  public static let snowWhite: SwiftUI.Color
+  public static let linenWhite: SwiftUI.Color
+  public static let lavenderBlushWhite: SwiftUI.Color
+  public static let ghostWhite: SwiftUI.Color
+  public static let antiqueWhite: SwiftUI.Color
+  public static let floralWhite: SwiftUI.Color
+  public static let gainsboroWhite: SwiftUI.Color
+  public static let honeydewWhite: SwiftUI.Color
+  public static let whisperWhite: SwiftUI.Color
+  public static let smokeWhite: SwiftUI.Color
+  public static let quartzWhite: SwiftUI.Color
+  public static let peachOrange: SwiftUI.Color
+  public static let apricotOrange: SwiftUI.Color
+  public static let melonOrange: SwiftUI.Color
+  public static let coralOrange: SwiftUI.Color
+  public static let sunsetOrange: SwiftUI.Color
+  public static let tangerineOrange: SwiftUI.Color
+  public static let neonCarrotOrange: SwiftUI.Color
+  public static let burntOrange: SwiftUI.Color
+  public static let rustOrange: SwiftUI.Color
+  public static let bronzeOrange: SwiftUI.Color
+  public static let copperOrange: SwiftUI.Color
+  public static let pumpkinOrange: SwiftUI.Color
+  public static let carrotOrange: SwiftUI.Color
+  public static let amberOrange: SwiftUI.Color
+  public static let apricotCreamOrange: SwiftUI.Color
+  public static let chocolateOrange: SwiftUI.Color
+  public static let siennaOrange: SwiftUI.Color
+  public static let mahoganyOrange: SwiftUI.Color
+  public static let beigeBrown: SwiftUI.Color
+  public static let wheatBrown: SwiftUI.Color
+  public static let tanBrown: SwiftUI.Color
+  public static let khakiBrown: SwiftUI.Color
+  public static let sandyBrown: SwiftUI.Color
+  public static let goldenrodBrown: SwiftUI.Color
+  public static let peruBrown: SwiftUI.Color
+  public static let burlywoodBrown: SwiftUI.Color
+  public static let siennaBrown: SwiftUI.Color
+  public static let saddleBrown: SwiftUI.Color
+  public static let chocolateBrown: SwiftUI.Color
+  public static let cinnamonBrown: SwiftUI.Color
+  public static let maroonBrown: SwiftUI.Color
+  public static let umberBrown: SwiftUI.Color
+  public static let walnutBrown: SwiftUI.Color
+  public static let espressoBrown: SwiftUI.Color
+  public static let darkChocolateBrown: SwiftUI.Color
+  public static let darkBrownBrown: SwiftUI.Color
+  public static let deepBrown: SwiftUI.Color
+  public static let gainsboroGray: SwiftUI.Color
+  public static let lightGray: SwiftUI.Color
+  public static let silverGray: SwiftUI.Color
+  public static let platinumGray: SwiftUI.Color
+  public static let spanishGray: SwiftUI.Color
+  public static let coolGray: SwiftUI.Color
+  public static let slateGray: SwiftUI.Color
+  public static let dimGray: SwiftUI.Color
+  public static let charcoalGray: SwiftUI.Color
+  public static let outerSpaceGray: SwiftUI.Color
+  public static let onyxGray: SwiftUI.Color
+  public static let jetGray: SwiftUI.Color
+  public static let ebonyGray: SwiftUI.Color
+  public static let davysGrey: SwiftUI.Color
+  public static let taupeGray: SwiftUI.Color
+}
+public func twoLineGraph(_ title: Swift.String, _ shareNames: [Swift.String], _ percentages1: [CoreFoundation.CGFloat], _ percentages2: [CoreFoundation.CGFloat], _ label1: Swift.String, _ label2: Swift.String, _ size: CoreFoundation.CGFloat = 600) -> some SwiftUI.View
+
+public struct SmartAlert : SwiftUI.View {
+  public init(title: Swift.String, showAlert: SwiftUI.Binding<Swift.Bool>)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10SmartAlertV4bodyQrvp", 0) __
+}
+public struct SmartConfirmAlert : SwiftUI.View {
+  public init(title: Swift.String, onConfirm: @escaping () -> Swift.Void, onCancel: @escaping () -> Swift.Void, showAlert: SwiftUI.Binding<Swift.Bool>)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine17SmartConfirmAlertV4bodyQrvp", 0) __
+}
+public struct SmartPrompt : SwiftUI.View {
+  public init(title: Swift.String, content: Swift.String, isPresented: SwiftUI.Binding<Swift.Bool>, onConfirm: @escaping (Swift.String?) -> Swift.Void, onCancel: @escaping (Swift.String?) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public func closePrompt()
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine11SmartPromptV4bodyQrvp", 0) __
+}
+public struct PromptButtonStyle : SwiftUI.ButtonStyle {
+  public func makeBody(configuration: NeuralEngine.PromptButtonStyle.Configuration) -> some SwiftUI.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine17PromptButtonStyleV8makeBody13configurationQr7SwiftUI0dE13ConfigurationV_tF", 0) __
+}
+public func GeneratePDF(queries: [Swift.String], headers: [[Swift.String]], titles: [Swift.String], pdfData: SwiftUI.Binding<Foundation.Data?>, showPDF: SwiftUI.Binding<Swift.Bool>, landScape: Swift.Bool = false, mainSectionTitles: [(title: Swift.String, range: Swift.Range<Swift.Int>)] = [])
+public struct PDFManager {
+  public init()
+  public static func generatePDF(queries: [Swift.String], headers: [[Swift.String]], titles: [Swift.String], landScape: Swift.Bool, mainSectionTitles: [(title: Swift.String, range: Swift.Range<Swift.Int>)], completion: @escaping (Foundation.Data?) -> Swift.Void)
+}
+public struct PDFViewer : SwiftUI.View {
+  public init(data: Foundation.Data)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine9PDFViewerV4bodyQrvp", 0) __
+}
+public struct PDFKitView : SwiftUI.UIViewRepresentable {
+  public let data: Foundation.Data
+  public init(data: Foundation.Data)
+  @_Concurrency.MainActor(unsafe) public func makeUIView(context: NeuralEngine.PDFKitView.Context) -> PDFKit.PDFView
+  @_Concurrency.MainActor(unsafe) public func updateUIView(_ uiView: PDFKit.PDFView, context: NeuralEngine.PDFKitView.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewType = PDFKit.PDFView
+}
+public struct ShareSheet : SwiftUI.UIViewControllerRepresentable {
+  public let activityItems: [Any]
+  public init(activityItems: [Any])
+  @_Concurrency.MainActor(unsafe) public func makeUIViewController(context: NeuralEngine.ShareSheet.Context) -> UIKit.UIActivityViewController
+  @_Concurrency.MainActor(unsafe) public func updateUIViewController(_ uiViewController: UIKit.UIActivityViewController, context: NeuralEngine.ShareSheet.Context)
+  public typealias Body = Swift.Never
+  public typealias Coordinator = Swift.Void
+  public typealias UIViewControllerType = UIKit.UIActivityViewController
+}
+public func DrawTable(headers: [Swift.String], dataSets: [[Swift.String]], startY: inout CoreFoundation.CGFloat, landScape: Swift.Bool = false, currentContext: UIKit.UIGraphicsPDFRendererContext?)
+extension SwiftUI.Color {
+  public init(hex: Swift.String)
+}
+public struct SmartBlackButton : SwiftUI.View {
+  public init(label: Swift.String, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public var outerBorder: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16SmartBlackButtonV4bodyQrvp", 0) __
+}
+public struct SmartGreenButton : SwiftUI.View {
+  public init(label: Swift.String, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public var outerBorder: some SwiftUI.View {
+    get
+  }
+  public var innerContent: some SwiftUI.View {
+    get
+  }
+  public var shimmerOverlay: some SwiftUI.View {
+    get
+  }
+  public var shimmerGradient: SwiftUI.LinearGradient {
+    get
+  }
+  public func startShineAnimations()
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16SmartGreenButtonV4bodyQrvp", 0) __
+}
+public struct SmartRedButton : SwiftUI.View {
+  public init(label: Swift.String, action: @escaping () -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
+    get
+  }
+  public var outerBorder: some SwiftUI.View {
+    get
+  }
+  public var innerContent: some SwiftUI.View {
+    get
+  }
+  public var shimmerOverlay: some SwiftUI.View {
+    get
+  }
+  public var shimmerGradient: SwiftUI.LinearGradient {
+    get
+  }
+  public func startShineAnimations()
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14SmartRedButtonV4bodyQrvp", 0) __
+}
+public func displayList(headline: Swift.String, items: [Swift.String]) -> some SwiftUI.View
+
+public func Notify(UID: Swift.String, msg: Swift.String)
+public struct ContactOurDeveloper : SwiftUI.View {
+  public func openWhatsApp(_ phoneNumber: Swift.String)
+  public func makeCall(_ phoneNumber: Swift.String)
+  public func sendEmail(_ emailAddress: Swift.String)
+  public func openInstagram(_ instagramUsername: Swift.String)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
   public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine19ContactOurDeveloperV4bodyQrvp", 0) __
 }
-public func backgrounfCard(content: SwiftUICore.AnyView) -> some SwiftUICore.View
-
-extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func backgroundCard(cardWidth: CoreFoundation.CGFloat = 370) -> some SwiftUICore.View
-  
-}
-extension SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public func liquidGlass(cardWidth: CoreFoundation.CGFloat = 370) -> some SwiftUICore.View
-  
-}
-@_Concurrency.MainActor @preconcurrency public struct DoubleDoughnutChart : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(title: Swift.String = "", shareNames: [Swift.String], percentages: [CoreFoundation.CGFloat], size: CoreFoundation.CGFloat = 270, centerText: Swift.String? = nil, centerImage: SwiftUICore.Image? = nil)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public var a: Swift.Int
+public struct DevEnvironment<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround> : SwiftUI.View where P1 : SwiftUI.View, P2 : SwiftUI.View, P3 : SwiftUI.View, P4 : SwiftUI.View, P5 : SwiftUI.View, P6 : SwiftUI.View, P7 : SwiftUI.View, P8 : SwiftUI.View, P9 : SwiftUI.View, P10 : SwiftUI.View, WorkAround : SwiftUI.View {
+  public init(p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9, p10: P10, workaround: WorkAround)
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
-  @_Concurrency.MainActor @preconcurrency public func isTextOverlappingArc(text: Swift.String, startAngle: CoreFoundation.CGFloat, endAngle: CoreFoundation.CGFloat, letterSpacingDegrees: CoreFoundation.CGFloat = 5) -> Swift.Bool
-  @_Concurrency.MainActor @preconcurrency public func truncatedText(for text: Swift.String, startAngle: CoreFoundation.CGFloat, endAngle: CoreFoundation.CGFloat, letterSpacingDegrees: CoreFoundation.CGFloat = 5) -> Swift.String
-  @_Concurrency.MainActor @preconcurrency public func colorForIndex(_ index: Swift.Int, total: Swift.Int) -> SwiftUICore.Color
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine19DoubleDoughnutChartV4bodyQrvp", 0) __
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine14DevEnvironmentV4bodyQrvp", 0) __<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, WorkAround>
 }
-public struct CircleSegment : SwiftUICore.Shape {
-  public init(startAngle: SwiftUICore.Angle, sweepAngle: SwiftUICore.Angle)
-  nonisolated public func path(in rect: CoreFoundation.CGRect) -> SwiftUICore.Path
-  public typealias AnimatableData = SwiftUICore.EmptyAnimatableData
-  public typealias Body = SwiftUICore._ShapeView<NeuralEngine.CircleSegment, SwiftUICore.ForegroundStyle>
-}
-@_Concurrency.MainActor @preconcurrency public struct CurvedText2 : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(text: Swift.String, radius: CoreFoundation.CGFloat, angle: Swift.Double, center: CoreFoundation.CGPoint)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+public func OTPNeverVerified() -> Swift.Bool
+public func OTPNotVerifiedToday() -> Swift.Bool
+public func reVerifyOTP() -> Swift.String
+public func separateSQLQueries(from input: Swift.String) -> [Swift.String]
+public func fetchTables(_ code: Swift.String)
+public func convertMySQLToSQLite(_ query: Swift.String)
+public func removeAfterLastParenthesis(from input: Swift.String) -> Swift.String
+public func LastVisitedPage() -> Swift.String?
+public struct Background : SwiftUI.View {
+  public init()
+  public var baseGradientColors: [SwiftUI.Color] {
     get
   }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine11CurvedText2V4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct CurvedText : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(text: Swift.String, radius: CoreFoundation.CGFloat, angle: Swift.Double, center: CoreFoundation.CGPoint)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+  public var isIpad: Swift.Bool {
     get
   }
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10CurvedTextV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct FillFromDatabase : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(BindVar: SwiftUICore.Binding<Swift.String>, Query: Swift.String, ErrorApnd: Swift.String, SelectBoxName: Swift.String, FirstDeafultValue: Swift.String = "")
-  @_Concurrency.MainActor @preconcurrency public func ProjectDropdown(query: Swift.String) -> [Swift.String]
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+  public var isIphone: Swift.Bool {
     get
   }
-  @_Concurrency.MainActor @preconcurrency public func customPicker(label: Swift.String, selection: SwiftUICore.Binding<Swift.String>) -> some SwiftUICore.View
-  
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine16FillFromDatabaseV4bodyQrvp", 0) __
-}
-@_Concurrency.MainActor @preconcurrency public struct DropDown : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+  @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
   }
-  @_Concurrency.MainActor @preconcurrency public init(BindVar: SwiftUICore.Binding<Swift.String>, ShowArray: [Swift.String], ErrorApnd: Swift.String, SelectBoxName: Swift.String, FirstDeafultValue: Swift.String = "")
-  @_Concurrency.MainActor @preconcurrency public func customPicker(label: Swift.String, selection: SwiftUICore.Binding<Swift.String>) -> some SwiftUICore.View
-  
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine8DropDownV4bodyQrvp", 0) __
+  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine10BackgroundV4bodyQrvp", 0) __
 }
-@_Concurrency.MainActor @preconcurrency public struct VideoUploader : SwiftUICore.View {
-  @_Concurrency.MainActor @preconcurrency public init(id: Swift.String)
-  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
-    get
-  }
-  @_Concurrency.MainActor @preconcurrency public func coverFlowView() -> some SwiftUICore.View
-  
-  @_Concurrency.MainActor @preconcurrency public func coverItem(for index: Swift.Int) -> some SwiftUICore.View
-  
-  @_Concurrency.MainActor @preconcurrency public func createPlayer(for index: Swift.Int, videoName: Swift.String) -> AVFoundation.AVPlayer?
-  public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine13VideoUploaderV4bodyQrvp", 0) __
-}
-extension NeuralEngine.AudioUploderView : Swift.Sendable {}
-extension NeuralEngine.Pagination : Swift.Sendable {}
-extension NeuralEngine.PaginationView : Swift.Sendable {}
-extension NeuralEngine.CheckmarkAnimationView : Swift.Sendable {}
-extension NeuralEngine.ParticleView : Swift.Sendable {}
-extension NeuralEngine.MultiLineGraph : Swift.Sendable {}
-extension NeuralEngine.SmartBlackButton : Swift.Sendable {}
-extension NeuralEngine.SmartGreenButton : Swift.Sendable {}
-extension NeuralEngine.SmartRedButton : Swift.Sendable {}
-extension NeuralEngine.PieSlice3D : Swift.Sendable {}
 extension NeuralEngine.FieldType : Swift.Equatable {}
 extension NeuralEngine.FieldType : Swift.Hashable {}
-extension NeuralEngine.RIBT : Swift.Sendable {}
-extension NeuralEngine.SettingsTextFieldList : Swift.Sendable {}
-extension NeuralEngine.RIBTSingleField : Swift.Sendable {}
-extension NeuralEngine.StarRatingView : Swift.Sendable {}
-extension NeuralEngine.FixedStars : Swift.Sendable {}
-extension NeuralEngine.BalloonSlider : Swift.Sendable {}
-extension NeuralEngine.BalloonView : Swift.Sendable {}
-extension NeuralEngine.LoginWithOTP : Swift.Sendable {}
-extension NeuralEngine.OTPTextField : Swift.Sendable {}
-extension NeuralEngine.SmartTable : Swift.Sendable {}
-extension NeuralEngine.SearchBar : Swift.Sendable {}
-extension NeuralEngine.FilterDialog : Swift.Sendable {}
-extension NeuralEngine.MinimizedTableView : Swift.Sendable {}
-extension NeuralEngine.CoverFlowTable : Swift.Sendable {}
-extension NeuralEngine.ColumnView : Swift.Sendable {}
-extension NeuralEngine.HighlightedText : Swift.Sendable {}
-extension NeuralEngine.DevEnvironment : Swift.Sendable {}
-extension NeuralEngine.Background : Swift.Sendable {}
-extension NeuralEngine.MyProfile : Swift.Sendable {}
-extension NeuralEngine.SomethingWorng : Swift.Sendable {}
-extension NeuralEngine.StarRatingBar : Swift.Sendable {}
-extension NeuralEngine.AccessDenied : Swift.Sendable {}
-extension NeuralEngine.FileUploadView : Swift.Sendable {}
-extension NeuralEngine.BlurView : Swift.Sendable {}
-extension NeuralEngine.PDFViewer : Swift.Sendable {}
-extension NeuralEngine.PDFKitView : Swift.Sendable {}
-extension NeuralEngine.ShareSheet : Swift.Sendable {}
-extension NeuralEngine.SmartAlert : Swift.Sendable {}
-extension NeuralEngine.SmartConfirmAlert : Swift.Sendable {}
-extension NeuralEngine.SmartPrompt : Swift.Sendable {}
-extension NeuralEngine.PromptButtonStyle : Swift.Sendable {}
-extension NeuralEngine.ContactOurDeveloper : Swift.Sendable {}
-extension NeuralEngine.DoubleDoughnutChart : Swift.Sendable {}
-extension NeuralEngine.CurvedText2 : Swift.Sendable {}
-extension NeuralEngine.CurvedText : Swift.Sendable {}
-extension NeuralEngine.FillFromDatabase : Swift.Sendable {}
-extension NeuralEngine.DropDown : Swift.Sendable {}
-extension NeuralEngine.VideoUploader : Swift.Sendable {}
