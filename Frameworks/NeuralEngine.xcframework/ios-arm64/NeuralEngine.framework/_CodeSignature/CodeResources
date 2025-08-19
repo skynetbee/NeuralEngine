@@ -10,47 +10,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		f6XsRNWygPAuotB6KYlRvAFj/Fc=
+		elzS2z+xcA93jO5DW1/3yWKG2Kg=
 		</data>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		coWp+goTJK5McyEqxvoufgqM6bE=
+		3R4e95+iZgHHiyQHO+XDRxdVGC4=
 		</data>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		RSee3oeYcP5loKGbnvOYGqg6yBI=
+		QCPnUWu2PZSXljrJgV31KAmDrLg=
 		</data>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		iURYp5UmqM/XVcQFIX4O+c4BR58=
+		JCNiprFiotPJ1O6k1dDR65V37nA=
 		</data>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		RSee3oeYcP5loKGbnvOYGqg6yBI=
+		QCPnUWu2PZSXljrJgV31KAmDrLg=
 		</data>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		h4uaiQhmL2gn9p4wbR+SVUJQs7c=
-		</data>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
-		<data>
-		coWp+goTJK5McyEqxvoufgqM6bE=
-		</data>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
-		<data>
-		sUw3fHfJN9Q1leDaZhx0Y5mzd5g=
-		</data>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
-		<data>
-		3dI56LL2UrNiiKJxQBI//Xy4+Rs=
-		</data>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
-		<data>
-		sUw3fHfJN9Q1leDaZhx0Y5mzd5g=
-		</data>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
-		<data>
-		hKPKYyf2u7VlYNGTQYgE5avkhJg=
+		ecHv86K3alLs30TjV1pPpPx/ij8=
 		</data>
 		<key>NeuralEngine.framework.dSYM/Contents/Info.plist</key>
 		<data>
@@ -78,74 +58,39 @@
 			gBIeMj3d0q7MeQbjdbP/TgynijjM3Kd6KgOGxFw/sFo=
 			</data>
 		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fi2HJJBaRQlUzcqrsf8+CLwbEyXSkv9UFKwD5zQmgyY=
+			BvejA1yrfafzExkZzdojMLE8vPzzaHlFNwxhhmnMWjA=
 			</data>
 		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RR54+nccHI86zNG8viwvQrQaNJeWnxZ1gXxASRFeB5Y=
+			ZDYKweZjQe0/Mrhj3yno8ZgWiOwDtkef2FK1fU8gt4E=
 			</data>
 		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rsH5gcpI86ILxXMN4G43lS27PNnO4JD2F1rFSTfZYvw=
+			1My1OG57gVQfVp6XDwkdtUDJf6WPDnZ7qKZkJbcaHmA=
 			</data>
 		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RR54+nccHI86zNG8viwvQrQaNJeWnxZ1gXxASRFeB5Y=
+			ZDYKweZjQe0/Mrhj3yno8ZgWiOwDtkef2FK1fU8gt4E=
 			</data>
 		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<key>Modules/NeuralEngine.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f34yhHB1479evDbXNf8DTNwzx1HMfPqSHN3ajVmJLHg=
-			</data>
-		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fi2HJJBaRQlUzcqrsf8+CLwbEyXSkv9UFKwD5zQmgyY=
-			</data>
-		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			NpT58DttrN2kNmoFsUg6kb503ZWD2ttE2/3NBqAALNc=
-			</data>
-		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ChMDrGRSpgJOfagiiZgjUaK8Xv8BL5A6N8ssSz2+xsM=
-			</data>
-		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			NpT58DttrN2kNmoFsUg6kb503ZWD2ttE2/3NBqAALNc=
-			</data>
-		</dict>
-		<key>Modules/NeuralEngine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XzwimbtcLisYC9SFsRoLeEjSZAYmsDHKfArrmV4qAmQ=
+			RNQXNbBgjQWe3IC4YO+e2OclkVeAeNLcMwCaITtLLeA=
 			</data>
 		</dict>
 		<key>NeuralEngine.framework.dSYM/Contents/Info.plist</key>
