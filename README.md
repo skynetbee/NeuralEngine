@@ -5,7 +5,7 @@
 ## 📦 Features
 
 - Precompiled as `.xcframework` for easy integration
-- Supports **iOS (13+)** and **macOS (11+)**
+- Supports **iOS (26)**
 - Lightweight and fast — ideal for apps requiring efficient neural operations
 - Designed for both development and production environments
 
