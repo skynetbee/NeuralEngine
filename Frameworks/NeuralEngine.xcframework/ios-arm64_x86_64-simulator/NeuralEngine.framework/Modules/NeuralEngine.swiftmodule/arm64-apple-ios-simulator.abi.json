@@ -30834,49 +30834,63 @@
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "IntegerLiteral",
-      "offset": 5082,
+      "offset": 4952,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "IntegerLiteral",
-      "offset": 5525,
+      "offset": 5395,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 6827,
+      "offset": 6697,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "Dictionary",
-      "offset": 6892,
+      "offset": 6762,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
+      "kind": "Dictionary",
+      "offset": 6867,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7000,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 21939,
+      "offset": 22309,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 21985,
+      "offset": 22355,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 22124,
+      "offset": 22494,
       "length": 5,
       "value": "false"
     },
