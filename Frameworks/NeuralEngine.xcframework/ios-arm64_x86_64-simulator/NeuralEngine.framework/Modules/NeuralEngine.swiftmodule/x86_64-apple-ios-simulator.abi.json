@@ -7392,6 +7392,53 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(label:value:fieldType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TField",
+                "printedName": "NeuralEngine.TField",
+                "usr": "s:12NeuralEngine6TFieldV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Binding",
+                "printedName": "SwiftUI.Binding<Swift.String>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:7SwiftUI7BindingV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RIBTFieldType",
+                "printedName": "NeuralEngine.RIBTFieldType",
+                "usr": "s:12NeuralEngine13RIBTFieldTypeO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:12NeuralEngine6TFieldV5label5value9fieldTypeACSS_7SwiftUI7BindingVySSGAA09RIBTFieldG0Otcfc",
+            "mangledName": "$s12NeuralEngine6TFieldV5label5value9fieldTypeACSS_7SwiftUI7BindingVySSGAA09RIBTFieldG0Otcfc",
+            "moduleName": "NeuralEngine",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Struct",
@@ -7851,6 +7898,51 @@
         "name": "SettingsTextFieldList",
         "printedName": "SettingsTextFieldList",
         "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(Placeholder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SettingsTextFieldList",
+                "printedName": "NeuralEngine.SettingsTextFieldList",
+                "usr": "s:12NeuralEngine21SettingsTextFieldListV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Binding",
+                "printedName": "SwiftUI.Binding<[NeuralEngine.TField]>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[NeuralEngine.TField]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TField",
+                        "printedName": "NeuralEngine.TField",
+                        "usr": "s:12NeuralEngine6TFieldV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:7SwiftUI7BindingV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:12NeuralEngine21SettingsTextFieldListV11PlaceholderAC7SwiftUI7BindingVySayAA6TFieldVGG_tcfc",
+            "mangledName": "$s12NeuralEngine21SettingsTextFieldListV11PlaceholderAC7SwiftUI7BindingVySayAA6TFieldVGG_tcfc",
+            "moduleName": "NeuralEngine",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
           {
             "kind": "Var",
             "name": "body",
@@ -30806,91 +30898,91 @@
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "Array",
-      "offset": 754,
+      "offset": 953,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "Array",
-      "offset": 808,
+      "offset": 1007,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 857,
+      "offset": 1056,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 908,
+      "offset": 1107,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "IntegerLiteral",
-      "offset": 4952,
+      "offset": 5151,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "IntegerLiteral",
-      "offset": 5395,
+      "offset": 5594,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 6697,
+      "offset": 7010,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "Dictionary",
-      "offset": 6762,
+      "offset": 7075,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "Dictionary",
-      "offset": 6867,
+      "offset": 7180,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "IntegerLiteral",
-      "offset": 7000,
+      "offset": 7313,
       "length": 3,
       "value": "100"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 22309,
+      "offset": 22622,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 22355,
+      "offset": 22668,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/DeveloperFramework\/iOSFramework\/InputBoxes\/RIBT_iOS.swift",
       "kind": "BooleanLiteral",
-      "offset": 22494,
+      "offset": 22807,
       "length": 5,
       "value": "false"
     },

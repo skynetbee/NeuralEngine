@@ -291,6 +291,7 @@ public struct TField : Swift.Identifiable {
   public var label: Swift.String
   public var value: SwiftUICore.Binding<Swift.String>
   public var fieldType: NeuralEngine.RIBTFieldType
+  public init(label: Swift.String, value: SwiftUICore.Binding<Swift.String>, fieldType: NeuralEngine.RIBTFieldType)
   public typealias ID = Foundation.UUID
 }
 @_Concurrency.MainActor @preconcurrency public struct RibtFillFromDatabase : SwiftUICore.View {
@@ -309,6 +310,7 @@ public struct TField : Swift.Identifiable {
   public typealias Body = @_opaqueReturnTypeOf("$s12NeuralEngine4RIBTV4bodyQrvp", 0) __
 }
 @_Concurrency.MainActor @preconcurrency public struct SettingsTextFieldList : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(Placeholder: SwiftUICore.Binding<[NeuralEngine.TField]>)
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
