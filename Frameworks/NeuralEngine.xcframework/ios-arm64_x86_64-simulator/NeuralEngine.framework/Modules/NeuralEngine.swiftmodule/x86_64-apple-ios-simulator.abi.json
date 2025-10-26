@@ -4812,30 +4812,6 @@
             "init_kind": "Designated"
           },
           {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "StarRatingBar",
-                "printedName": "NeuralEngine.StarRatingBar",
-                "usr": "s:12NeuralEngine13StarRatingBarV"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:12NeuralEngine13StarRatingBarVACycfc",
-            "mangledName": "$s12NeuralEngine13StarRatingBarVACycfc",
-            "moduleName": "NeuralEngine",
-            "declAttributes": [
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "init_kind": "Designated"
-          },
-          {
             "kind": "Var",
             "name": "body",
             "printedName": "body",

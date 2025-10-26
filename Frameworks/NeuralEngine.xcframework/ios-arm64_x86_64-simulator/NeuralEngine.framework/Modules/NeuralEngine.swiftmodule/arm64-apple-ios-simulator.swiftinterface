@@ -195,7 +195,6 @@ public struct Particle : Swift.Identifiable {
 }
 @_Concurrency.MainActor @preconcurrency public struct StarRatingBar : SwiftUICore.View {
   @_Concurrency.MainActor @preconcurrency public init(id: SwiftUICore.Binding<Swift.String>)
-  @_Concurrency.MainActor @preconcurrency public init()
   @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
     get
   }
