@@ -17319,8 +17319,7 @@
         "mangledName": "$s12NeuralEngine10SqlTrackerC",
         "moduleName": "NeuralEngine",
         "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
+          "AccessControl"
         ],
         "hasMissingDesignatedInitializers": true,
         "conformances": [
@@ -35956,49 +35955,49 @@
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "IntegerLiteral",
-      "offset": 158,
+      "offset": 73,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "StringLiteral",
-      "offset": 584,
+      "offset": 499,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "StringLiteral",
-      "offset": 607,
+      "offset": 522,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "StringLiteral",
-      "offset": 1212,
+      "offset": 1127,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "StringLiteral",
-      "offset": 1235,
+      "offset": 1150,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "StringLiteral",
-      "offset": 1786,
+      "offset": 1701,
       "length": 11,
       "value": "\"SQL Debug\""
     },
     {
       "filePath": "\/Users\/instinct\/Downloads\/XCFramework\/NeuralEngine\/DevEnvironment\/NeuralEngine\/Database\/SQLizers.swift",
       "kind": "BooleanLiteral",
-      "offset": 5069,
+      "offset": 4984,
       "length": 4,
       "value": "true"
     },
